@@ -17,8 +17,8 @@ def convert_currency(amount: float, base: str, target: str) -> float:
 
 
 if __name__ == "__main__":
-    base = input("From currency (e.g., USD): ").upper()
-    target = input("To currency (e.g., EUR): ").upper()
+    base = input("From currency (e.g., PKR): ").upper()
+    target = input("To currency (e.g., USD): ").upper()
     amount = float(input("Amount to convert: "))
     result = convert_currency(amount, base, target)
     print(f"{amount} {base} = {result} {target}")
