@@ -1,5 +1,6 @@
 import requests
 
+
 def get_exchange_rate(base: str, target: str) -> float:
     url = f"https://open.er-api.com/v6/latest/{base.upper()}"
     response = requests.get(url)
@@ -9,9 +10,11 @@ def get_exchange_rate(base: str, target: str) -> float:
         raise ValueError(f"Currency '{target}' not found.")
     return data["rates"][target.upper()]
 
+
 def convert_currency(amount: float, base: str, target: str) -> float:
     rate = get_exchange_rate(base, target)
     return round(amount * rate, 2)
+
 
 if __name__ == "__main__":
     base = input("From currency (e.g., USD): ").upper()
